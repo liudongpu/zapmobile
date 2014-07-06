@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <WebView
+    <com.srnpr.zaphybird.views.HybirdWebView
 android:id="@+id/hwv_2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
