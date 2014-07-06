@@ -83,8 +83,7 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 			
 			tabs.addTab(tabSpec);
 			// 设置Tab按钮的背景
-			tabs.getTabWidget().getChildAt(i)
-					.setBackgroundResource(R.drawable.selector_tab_background);
+			tabs.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.selector_tab_background);
 		}
 		
 		
@@ -157,7 +156,7 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 		cwv.loadUrl("http://www.baidu.com");
 		
 		CordovaWebView cvwv2=(CordovaWebView) findViewById(R.id.text2);
-		cvwv2.loadUrl("http://www.taobao.com");
+		cvwv2.loadUrl("http://www.yinxl.com/mobile/index");
 		
 		
 		
