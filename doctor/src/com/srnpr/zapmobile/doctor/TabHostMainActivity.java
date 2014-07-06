@@ -115,6 +115,10 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 		Config.init(this);
 		cwv.loadUrl("http://www.baidu.com");
 		
+		CordovaWebView cvwv2=(CordovaWebView) findViewById(R.id.text2);
+		cvwv2.loadUrl("http://www.taobao.com");
+		
+		
 		
 	}
 
