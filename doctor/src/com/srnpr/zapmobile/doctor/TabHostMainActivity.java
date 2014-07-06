@@ -13,9 +13,13 @@ import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 
@@ -33,6 +37,11 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 	private ImageButton footer_tab_btn5;
 	private ImageButton footer_tab_btn6;
 	private ImageButton footer_tab_btn7;
+	
+	
+	
+	
+
 
 	/* Called when the activity is first created. */
 	@Override
@@ -52,7 +61,36 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 		tabs = null;
 		tabs = (TabHost) findViewById(R.id.tabhost);
 		tabs.setup();
-		tabs.setOnTabChangedListener(TabChangeListener);
+		//tabs.setOnTabChangedListener(TabChangeListener);
+		
+		
+		
+		// 定义数组来存放Fragment界面
+				int[] fragmentArray = { R.id.text1,R.id.text2,R.id.text3,R.id.text4 };
+
+		// 得到fragment的个数
+		int count = fragmentArray.length;
+		layoutInflater = LayoutInflater.from(this);
+		
+		
+		
+		for (int i = 0; i < count; i++) {
+			// 为每一个Tab按钮设置图标、文字和内容
+			TabSpec tabSpec = tabs.newTabSpec(mTextviewArray[i])
+					.setIndicator(getTabItemView(i));
+			// 将Tab按钮添加进Tab选项卡中
+			tabSpec.setContent(fragmentArray[i]);
+			
+			tabs.addTab(tabSpec);
+			// 设置Tab按钮的背景
+			tabs.getTabWidget().getChildAt(i)
+					.setBackgroundResource(R.drawable.selector_tab_background);
+		}
+		
+		
+		
+		/*
+		
 		// 设置Tab1
 		footer_tab_btn1 = new ImageButton(this);
 		footer_tab_btn1.setBackgroundResource(R.drawable.home_btn_bg);
@@ -84,6 +122,9 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 		tab4.setIndicator(footer_tab_btn4);
 		tab4.setContent(R.id.text4);
 		tabs.addTab(tab4);
+		*/
+		
+		
 		/*
 		// 设置Tab5
 		footer_tab_btn5 = new ImageButton(this);
@@ -121,6 +162,33 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 		
 		
 	}
+	// 定义一个布局
+		private LayoutInflater layoutInflater;
+		
+		// 定义数组来存放按钮图片
+		private int mImageViewArray[] = { R.drawable.tab_home_btn,
+				R.drawable.tab_message_btn, R.drawable.tab_selfinfo_btn,
+				R.drawable.tab_square_btn, R.drawable.tab_more_btn };
+
+		// Tab选项卡的文字
+		private String mTextviewArray[] = { "首页", "消息", "好友", "广场", "更多" };
+	
+	/**
+	 * 给Tab按钮设置图标和文字
+	 */
+	private View getTabItemView(int index) {
+		View view = layoutInflater.inflate(R.layout.tab_item_view, null);
+
+		ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
+		imageView.setImageResource(mImageViewArray[index]);
+
+		TextView textView = (TextView) view.findViewById(R.id.textview);
+		textView.setText(mTextviewArray[index]);
+
+		return view;
+	}
+	
+	
 
 	private OnTabChangeListener TabChangeListener = new OnTabChangeListener() {
 
