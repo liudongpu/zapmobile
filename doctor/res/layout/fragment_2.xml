@@ -3,11 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <ImageView
-        android:id="@+id/imageview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/xianjian02" >
-    </ImageView>
+    <WebView
+android:id="@+id/hwv_2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:scaleType="fitCenter"
+    />
 </LinearLayout>
