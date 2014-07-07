@@ -44,6 +44,10 @@
                     android:id="@+id/aw_webview_4"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" />
+                   <org.apache.cordova.CordovaWebView
+                    android:id="@+id/aw_webview_5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
             </FrameLayout>
         </RelativeLayout>
     </TabHost>
