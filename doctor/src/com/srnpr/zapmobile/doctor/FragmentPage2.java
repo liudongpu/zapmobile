@@ -1,6 +1,6 @@
 package com.srnpr.zapmobile.doctor;
 
-import com.srnpr.zaphybird.views.HybirdWebView;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,11 +21,11 @@ public class FragmentPage2 extends Fragment{
 	            rootView=inflater.inflate(R.layout.fragment_2, null);  
 	            
 	            
-	            HybirdWebView webview = (HybirdWebView) rootView.findViewById(R.id.hwv_2);
+	            //HybirdWebView webview = (HybirdWebView) rootView.findViewById(R.id.hwv_2);
 	    		
 	    		
 	    		
-	    		webview.loadUrl("http://www.baidu.com/");
+	    		//webview.loadUrl("http://www.baidu.com/");
 	            
 	            
 	        }  
