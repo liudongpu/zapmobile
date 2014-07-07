@@ -3,7 +3,10 @@ package com.srnpr.app.yinxlapp;
 import org.apache.cordova.Config;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
+
 import com.srnpr.zaphybird.views.HybirdActivity;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +18,14 @@ import android.widget.TabHost.TabSpec;
 import android.content.Intent;
 
 public class MainActivity extends HybirdActivity implements CordovaInterface {
+	
+	
+	private String mTextviewArray[] = { "首页", "消息", "好友", "广场", "更多" };
+	
+	private String mUrlStrings[]={"http://www.baidu.com","http://www.taobao.com","http://www.vip.com","http://www.tmall.com","http://www.jd.com"};
+	
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +37,7 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 
 		// CordovaWebView cwv = (CordovaWebView) findViewById(R.id.text1);
 		Config.init(this);
+		initWebViews();
 
 	}
 
@@ -58,7 +70,7 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 
 	}
 
-	private String mTextviewArray[] = { "首页", "消息", "好友", "广场", "更多" };
+	
 	// 定义数组来存放按钮图片
 	private int mImageViewArray[] = { R.drawable.tab_home_btn,
 			R.drawable.tab_message_btn, R.drawable.tab_selfinfo_btn,
@@ -76,6 +88,26 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 		textView.setText(mTextviewArray[index]);
 
 		return view;
+	}
+	
+	
+	
+	private void initWebViews()
+	{
+		CordovaWebView cWebView1=(CordovaWebView) findViewById(R.id.aw_webview_1);
+		cWebView1.loadUrl(mUrlStrings[0]);
+
+		CordovaWebView cWebView2=(CordovaWebView) findViewById(R.id.aw_webview_2);
+		cWebView2.loadUrl(mUrlStrings[1]);
+
+		CordovaWebView cWebView3=(CordovaWebView) findViewById(R.id.aw_webview_3);
+		cWebView3.loadUrl(mUrlStrings[2]);
+
+		CordovaWebView cWebView4=(CordovaWebView) findViewById(R.id.aw_webview_4);
+		cWebView4.loadUrl(mUrlStrings[3]);
+
+		CordovaWebView cWebView5=(CordovaWebView) findViewById(R.id.aw_webview_5);
+		cWebView5.loadUrl(mUrlStrings[4]);
 	}
 
 	@Override
