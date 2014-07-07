@@ -86,7 +86,7 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 			tabs.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.selector_tab_background);
 		}
 		
-		
+		//updateTab(tabs);
 		
 		/*
 		
@@ -180,12 +180,38 @@ public class TabHostMainActivity extends Activity implements CordovaInterface {
 
 		ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
 		imageView.setImageResource(mImageViewArray[index]);
+		
+		//imageView.setAlpha(0);
 
 		TextView textView = (TextView) view.findViewById(R.id.textview);
 		textView.setText(mTextviewArray[index]);
 
 		return view;
 	}
+	
+	
+	
+	
+	
+	private void updateTab(final TabHost tabHost) { 
+        for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) { 
+            View view = tabHost.getTabWidget().getChildAt(i); 
+            //TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); 
+            //tv.setTextSize(16); 
+            //tv.setTypeface(Typeface.SERIF, 2); // 设置字体和风格  
+            if (tabHost.getCurrentTab() == i) {//选中  
+                view.setBackgroundResource(R.drawable.selector_tab_background);//选中后的背景  
+               // tv.setTextColor(this.getResources().getColorStateList( 
+                       // android.R.color.black)); 
+            } else {//不选中  
+                view.setBackgroundResource(R.drawable.selector_tab_background);//非选择的背景  
+                //tv.setTextColor(this.getResources().getColorStateList( 
+                      // android.R.color.white)); 
+            } 
+        } 
+    } 
+
+	
 	
 	
 
