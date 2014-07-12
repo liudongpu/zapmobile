@@ -67,8 +67,10 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 
 			tabs.addTab(tabSpec);
 			// 设置Tab按钮的背景
+			/*
 			tabs.getTabWidget().getChildAt(i)
 					.setBackgroundResource(R.drawable.selector_tab_background);
+					*/
 		}
 
 	}
