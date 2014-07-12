@@ -21,7 +21,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 
 /**
  * An advanced version of {@link PullToRefreshWebView} which delegates the
@@ -60,18 +62,40 @@ import com.handmark.pulltorefresh.library.PullToRefreshWebView;
  * @author Chris Banes
  */
 public class HybirdWebView extends PullToRefreshWebView {
+	private static final OnRefreshListener2<WebView> defaultOnRefreshListener = new OnRefreshListener2<WebView>() {
 
+		@Override
+		public void onPullDownToRefresh(PullToRefreshBase<WebView> refreshView) {
+			refreshView.getRefreshableView().reload();
+			
+			//refreshView.getRefreshableView().loadUrl("javascript:alert('up');");
+			//refreshView.onRefreshComplete();
+			
+		}
+
+		@Override
+		public void onPullUpToRefresh(PullToRefreshBase<WebView> refreshView) {
+			//refreshView.getRefreshableView().reload();
+			refreshView.getRefreshableView().loadUrl("javascript:alert('down');");
+			refreshView.onRefreshComplete();
+		}
+
+		
+	};
 	
 	public HybirdWebView(Context context) {
 		super(context);
+		setOnRefreshListener(defaultOnRefreshListener);
 	}
 
 	public HybirdWebView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		setOnRefreshListener(defaultOnRefreshListener);
 	}
 
 	public HybirdWebView(Context context, Mode mode) {
 		super(context, mode);
+		setOnRefreshListener(defaultOnRefreshListener);
 	}
 
 }

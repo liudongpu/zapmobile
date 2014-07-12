@@ -112,7 +112,7 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 
 	private void initRefreshView(int iId, String sLoadUrl) {
 
-		PullToRefreshWebView pullToRefreshWebView=(PullToRefreshWebView)findViewById(iId);
+		HybirdWebView pullToRefreshWebView=(HybirdWebView)findViewById(iId);
 		
 		WebView webView = pullToRefreshWebView.getRefreshableView();
 

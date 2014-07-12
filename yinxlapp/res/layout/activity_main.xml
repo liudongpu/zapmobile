@@ -28,22 +28,22 @@
                 android:layout_height="fill_parent"
                 android:layout_above="@android:id/tabs" >
 
-                <com.handmark.pulltorefresh.library.PullToRefreshWebView
+                <com.srnpr.zaphybird.pull.HybirdWebView
                     xmlns:ptr="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/aw_webview_1"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" ptr:ptrMode="both" />
-                 <com.handmark.pulltorefresh.library.PullToRefreshWebView
+                 <com.srnpr.zaphybird.pull.HybirdWebView
                      xmlns:ptr="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/aw_webview_2"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" ptr:ptrMode="both" />
-                  <com.handmark.pulltorefresh.library.PullToRefreshWebView
+                  <com.srnpr.zaphybird.pull.HybirdWebView
                       xmlns:ptr="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/aw_webview_3"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" ptr:ptrMode="both" />
-                   <com.handmark.pulltorefresh.library.PullToRefreshWebView
+                   <com.srnpr.zaphybird.pull.HybirdWebView
                        xmlns:ptr="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/aw_webview_4"
                     android:layout_width="fill_parent"
