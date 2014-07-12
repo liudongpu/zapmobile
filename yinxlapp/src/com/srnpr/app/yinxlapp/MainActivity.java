@@ -24,11 +24,11 @@ import android.content.Intent;
 
 public class MainActivity extends HybirdActivity implements CordovaInterface {
 
-	private String mTextviewArray[] = { "首页", "消息", "好友", "广场", "更多" };
+	private String mTextviewArray[] = { "首页", "列表", "好友", "搜索", "更多" };
 
 	private String mUrlStrings[] = {
-			"http://dev.ichsy.com/iscroll-master/demos/scrollbars/",
-			"http://www.taobao.com", "http://www.vip.com",
+			"http://web.yinxl.com/mobile/index",
+			"http://web.yinxl.com/mobile/index#mobile_list", "http://www.vip.com",
 			"http://www.tmall.com", "http://www.jd.com" };
 
 	@Override
