@@ -22,7 +22,7 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 	
 	private String mTextviewArray[] = { "首页", "消息", "好友", "广场", "更多" };
 	
-	private String mUrlStrings[]={"http://www.baidu.com","http://www.taobao.com","http://www.vip.com","http://www.tmall.com","http://www.jd.com"};
+	private String mUrlStrings[]={"http://dev.ichsy.com/iscroll-master/demos/scrollbars/","http://www.taobao.com","http://www.vip.com","http://www.tmall.com","http://www.jd.com"};
 	
 	
 	
