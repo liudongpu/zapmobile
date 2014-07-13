@@ -8,6 +8,7 @@ import org.apache.cordova.CordovaWebView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
+import com.srnpr.app.yinxlapp.init.InitYinxl;
 import com.srnpr.zaphybird.pull.HybirdWebView;
 import com.srnpr.zaphybird.views.HybirdActivity;
 
@@ -35,6 +36,15 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		
+		
+		InitYinxl initYinxl=new InitYinxl(getVersion());
+		
+		
+		
+		
+		
 
 		initTabs();
 

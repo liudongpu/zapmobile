@@ -1,22 +1,29 @@
 package com.srnpr.app.yinxlapp.init;
 
-import com.srnpr.zaphybird.libs.hybirdenumer.*;
+import android.content.Context;
 
-public class InitYinxl {
+import com.srnpr.zaphybird.libs.hybirdenumer.*;
+import com.srnpr.zaphybird.libs.top.TopInit;
+
+public class InitYinxl extends TopInit {
 
 	/*
-	 * 定义当前加载的类型
+	 * 定义当前加载的版本类型
 	 */
 	private final static CurrentModelEnumer MODEL = CurrentModelEnumer.DEBUG;
 
-	/**
-	 * 定义测试版本的配置地址
-	 */
-	private final static String CONFIG_URL_DEBUG = "http://192.168.0.215:8080/mobile/index";
+	private final static String DECIVAL = "android";
 
-	/**
-	 * 定义正式版本的配置地址
-	 */
-	private final static String CONFIG_URL_FORMAT = "http://web.yinxl.com/mobile/index";
+	public InitYinxl(String sVersion) {
+		// 设置测试版本地址
+		inConfigUrl(CurrentModelEnumer.DEBUG,
+				"http://192.168.0.215:8080/mobile/index");
+		// 设置正式版本地址
+		inConfigUrl(CurrentModelEnumer.RELEASE,
+				"http://web.yinxl.com/mobile/index");
+
+		initConfig(MODEL, sVersion);
+
+	}
 
 }
