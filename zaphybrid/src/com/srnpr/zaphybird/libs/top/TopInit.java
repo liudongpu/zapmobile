@@ -7,6 +7,9 @@ import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zaphybird.libs.BaseClass;
 import com.srnpr.zaphybird.libs.hybirdenumer.CurrentModelEnumer;
+import com.srnpr.zaphybird.libs.model.MDataMap;
+import com.srnpr.zaphybird.libs.model.ResultHttp;
+import com.srnpr.zaphybird.libs.support.HttpSupport;
 
 public class TopInit extends BaseClass {
 
@@ -26,6 +29,28 @@ public class TopInit extends BaseClass {
 		CurrentModelEnumer nowModelEnumer = getModelByVersion(sVersion);
 
 		String sTargetUrl = configUrlMap.get(nowModelEnumer);
+		
+		//判断如果加载的是空  则自动加载
+		if(StringUtils.isEmpty(sTargetUrl))
+		{
+			sTargetUrl=configUrlMap.get(CurrentModelEnumer.RELEASE);
+		}
+		
+		
+		
+		HttpSupport httpSupport=new HttpSupport();
+		
+		
+		ResultHttp resultHttp= httpSupport.httpGet(sTargetUrl);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		// if(sTargetUrl.e)
 

@@ -27,10 +27,12 @@ public class MainActivity extends HybirdActivity implements CordovaInterface {
 
 	private String mTextviewArray[] = { "首页", "列表", "好友", "搜索", "更多" };
 
+	
+	private String baseUrl="http://192.168.0.215:8080";
 	private String mUrlStrings[] = {
-			"http://web.yinxl.com/mobile/index",
-			"http://web.yinxl.com/mobile/index#mobile_list", "http://www.vip.com",
-			"http://www.tmall.com", "http://www.jd.com" };
+			baseUrl+"/mobile/index",
+			baseUrl+"/mobile/index#mobile_list", "http://www.vip.com",
+			baseUrl+"/mobile/index#mobile_search", baseUrl+"/mobile/index#mobile_user" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
