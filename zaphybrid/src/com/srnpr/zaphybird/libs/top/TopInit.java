@@ -2,6 +2,8 @@ package com.srnpr.zaphybird.libs.top;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.lang.StringUtils;
+
 
 import com.srnpr.zaphybird.libs.BaseClass;
 import com.srnpr.zaphybird.libs.hybirdenumer.CurrentModelEnumer;
@@ -33,9 +35,16 @@ public class TopInit extends BaseClass {
 
 		CurrentModelEnumer nowModel = CurrentModelEnumer.RELEASE;
 
+		/*
 		if (sVersion.split("\\.")[1].equals("0")) {
 			nowModel = CurrentModelEnumer.DEBUG;
+		}*/
+		
+		if(StringUtils.split(sVersion,".")[1].equals("0"))
+		{
+			nowModel = CurrentModelEnumer.DEBUG;
 		}
+		
 
 		return nowModel;
 	}
